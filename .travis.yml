@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t svastikkka/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run svastikkka/docker-react npm run test -- --coverage
+
+deploy:
+  on:
+    branch: master
+
+
