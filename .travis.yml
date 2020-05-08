@@ -8,6 +8,8 @@ before_install:
 script:
   - docker run svastikkka/docker-react npm run test -- --coverage
 
-
+deploy:
+  on:
+    branch: master
 
 
